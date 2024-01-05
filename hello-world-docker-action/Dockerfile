@@ -5,9 +5,9 @@ FROM alpine:3.10
 WORKDIR /usr/src
 
 # Copy any source file(s) required for the action
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh .
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /usr/src/entrypoint.sh
 
 # Configure the container to be run as an executable
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/entrypoint.sh"]
